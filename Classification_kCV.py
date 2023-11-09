@@ -331,6 +331,18 @@ for train_index, test_index in rskf.split(X, y):
     
     i = i+1
 
+#%% Calc weighted precision score
+"""
+Please note, the above calculated precision score does not yet account for the inbalance
+between the groups in the data set and is therefore misleading.
+Therefore, below the weighted precision score is additionally calculated.
+"""
+res_weight_precision = []
+
+for i in range(0, len(res_y_test)):
+    print(i)
+    weight_prec = precision_score(res_y_test[i], res_y_pred[i], average='weighted')
+    res_weight_precision.append(weight_prec)
 
 
 #%% Read in and structure [Yak-00] data
