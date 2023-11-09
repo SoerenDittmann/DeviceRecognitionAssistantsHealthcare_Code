@@ -340,7 +340,6 @@ Therefore, below the weighted precision score is additionally calculated.
 res_weight_precision = []
 
 for i in range(0, len(res_y_test)):
-    print(i)
     weight_prec = precision_score(res_y_test[i], res_y_pred[i], average='weighted')
     res_weight_precision.append(weight_prec)
 
